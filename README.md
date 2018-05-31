@@ -5,11 +5,11 @@ Sample repo to repro the crash that we detected on Android 7 and 8 (haven't test
 Fatal Exception: java.lang.RuntimeException
 Error calling RCTEventEmitter.receiveEvent
 
-Failed to create Value from JSON:
-
-<stacktrace>
 Caused by com.facebook.jni.CppException
 Failed to create Value from JSON:
+
+<...stacktrace>
+
 ```
 
 Steps to reproduce:
