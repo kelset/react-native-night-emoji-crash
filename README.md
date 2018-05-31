@@ -2,11 +2,14 @@
 Sample repo to repro the crash that we detected on Android 7 and 8 (haven't tested on other versions of Android):
 
 ```
-Error calling RTCEventEmitter.receiveEvent
+Fatal Exception: java.lang.RuntimeException
+Error calling RCTEventEmitter.receiveEvent
 
 Failed to create Value from JSON:
 
 <stacktrace>
+Caused by com.facebook.jni.CppException
+Failed to create Value from JSON:
 ```
 
 Steps to reproduce:
@@ -26,3 +29,7 @@ Other words that trigger GBoard suggestion:
 * "sun" ⛅️ -> no crash
 
 This only happens on Android: I tested the steps on iOS (yes, there is a GBoard for iOS) and it doesn't happen there - btw there the words that 'trigger' emoji suggestions are different, the only one that triggers the same emoji on both platforms is "piano" 🎹 (and on iOS it doesn't crash, on Android yes) (ok maybe not the only one, but the only one I found quickly).
+
+And yes, it doesn't happen if remote debugging is active.
+
+Maybe related to the JSC version?
