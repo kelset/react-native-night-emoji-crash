@@ -34,12 +34,17 @@ export default class App extends Component<Props, State> {
             borderColor: 'gray',
             borderWidth: 1
           }}
-          onChangeText={text => this.setState({ text })}
+          onChangeText={this._onChangeText}
           value={this.state.text}
         />
       </View>
     );
   }
+
+  _onChangeText = text => {
+    console.log('yo', text);
+    this.setState({ text });
+  };
 }
 
 const styles = StyleSheet.create({
