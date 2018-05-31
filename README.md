@@ -1,5 +1,5 @@
 # react-native-night-emoji-crash
-Sample repo to repro the crash:
+Sample repo to repro the crash that we detected on Android 7 and 8 (haven't tested on other versions of Android):
 
 ```
 Error calling RTCEventEmitter.receiveEvent
@@ -24,3 +24,5 @@ Other words that trigger GBoard suggestion:
 * "rainbow" 🌈 -> crash
 * "cloud" ☁️ -> no crash
 * "sun" ⛅️ -> no crash
+
+This only happens on Android: I tested the steps on iOS (yes, there is a GBoard for iOS) and it doesn't happen there - btw there the words that 'trigger' emoji suggestions are different, the only one that triggers the same emoji on both platforms is "piano" 🎹 (and on iOS it doesn't crash, on Android yes) (ok maybe not the only one, but the only one I found quickly).
